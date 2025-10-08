@@ -2,6 +2,7 @@ import React from "react";
 import appleImg from "../../assets/fi_5977575.png";
 import playImg from "../../assets/fi_16076057.png";
 import banner from "../../assets/hero.png";
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
@@ -21,14 +22,18 @@ const Banner = () => {
           make an impact.
         </p>
         <div className="flex flex-col md:flex-row justify-center items-center gap-7 mt-7">
-          <button className="flex justify-center items-center btn py-6 font-semibold text-[16px] hover:shadow-md hover:bg-gradient-to-tr from-[#632EE3] to-[#9F62F2] hover:text-white">
-            <img src={playImg} alt="" />
-            Google Play
-          </button>
-          <button className="flex justify-center items-center btn py-6 font-semibold text-[16px] hover:shadow-md hover:bg-gradient-to-tr from-[#632EE3] to-[#9F62F2] hover:text-white">
-            <img src={appleImg} alt="" />
-            App Store
-          </button>
+          <Link to="https://play.google.com/store/apps?hl=en">
+            <button className="flex justify-center items-center btn py-6 font-semibold text-[16px] hover:shadow-md hover:bg-gradient-to-tr from-[#632EE3] to-[#9F62F2] hover:text-white">
+              <img src={playImg} alt="" />
+              Google Play
+            </button>
+          </Link>
+          <Link to="https://www.apple.com/app-store/">
+            <button className="flex justify-center items-center btn py-6 font-semibold text-[16px] hover:shadow-md hover:bg-gradient-to-tr from-[#632EE3] to-[#9F62F2] hover:text-white">
+              <img src={appleImg} alt="" />
+              App Store
+            </button>
+          </Link>
         </div>
         <div className="mt-10 flex justify-center items-center">
           <img src={banner} alt="" />

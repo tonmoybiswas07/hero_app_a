@@ -18,7 +18,7 @@ const TrendingApps = ({ loadData }) => {
       </div>
       <div className="flex justify-center items-center mt-10 ">
         <Link to="/AllApps">
-          <button className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] py-2 px-4 text-white font-semibold rounded-md">
+          <button className="cursor-pointer bg-gradient-to-r from-[#632EE3] to-[#9F62F2] py-2 px-4 text-white font-semibold rounded-md">
             Show All
           </button>
         </Link>

@@ -1,28 +1,29 @@
 import React from "react";
-import { Link, NavLink } from "react-router";
+import { Link, Links, NavLink } from "react-router";
 import logoImg from "../../assets/logo.png";
 import { FaGithub } from "react-icons/fa";
+import "./Header.css";
 
 const Header = () => {
   const links = [
-    <NavLink to="/">
-      <a className=" text-lg mr-5" href="/">
+    <NavLink className="mx-6" to="/">
+      <a className=" text-lg" href="/">
         Home
       </a>
     </NavLink>,
-    <NavLink to="/AllApps">
-      <a className=" text-lg mr-5" href="/">
+    <NavLink className="mx-6" to="/AllApps">
+      <a className=" text-lg" href="/">
         Apps
       </a>
     </NavLink>,
-    <NavLink>
+    <NavLink to="/" className="mx-6">
       <a className="text-lg " href="/">
         Installation
       </a>
     </NavLink>,
   ];
   return (
-    <div className="navbar bg-base-100 shadow-sm px-0 md:px-14">
+    <div className="navbar bg-base-100 shadow-sm px-0 md:px-14 sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,9 +49,11 @@ const Header = () => {
             {links}
           </ul>
         </div>
-        <div className="flex justify-center items-center gap-2">
-          <img className="h-10 w-10" src={logoImg} alt="" />
-          <h3 className="font-bold text-[16px text-[#632EE3] ">HERO.IO</h3>
+        <div>
+          <Link className="flex justify-center items-center gap-2" to="/">
+            <img className="h-10 w-10" src={logoImg} alt="" />
+            <h3 className="font-bold text-[16px text-[#632EE3] ">HERO.IO</h3>
+          </Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
