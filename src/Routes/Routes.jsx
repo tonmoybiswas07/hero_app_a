@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router";
 import Root from "../Pages/Roots/Root";
 import Error from "../Pages/Error/Error";
 import Home from "../Pages/Home/Home";
+import AllApps from "../Pages/AllApps/AllApps";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -13,7 +14,12 @@ export const router = createBrowserRouter([
       {
         index: true,
         path: "/",
+        loader: () => fetch("/trending.json"),
         Component: Home,
+      },
+      {
+        path: "/AllApps",
+        Component: AllApps,
       },
     ],
   },

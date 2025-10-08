@@ -5,12 +5,12 @@ import { FaGithub } from "react-icons/fa";
 
 const Header = () => {
   const links = [
-    <NavLink>
+    <NavLink to="/">
       <a className=" text-lg mr-5" href="/">
         Home
       </a>
     </NavLink>,
-    <NavLink>
+    <NavLink to="/AllApps">
       <a className=" text-lg mr-5" href="/">
         Apps
       </a>
@@ -38,7 +38,7 @@ const Header = () => {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
+              />
             </svg>
           </div>
           <ul
