@@ -10,10 +10,7 @@ const TrendingApp = ({ app }) => {
       <div>
         <div className="card bg-base-100 hover:scale-105 hover:shadow-xl  shadow-sm p-5 m-2 md:m-0">
           <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt={title}
-            />
+            <img className="w-96 h-40" src={image} alt={title} />
           </figure>
           <div className="font-bold my-2 text-[20px]">
             <h2>{title}</h2>

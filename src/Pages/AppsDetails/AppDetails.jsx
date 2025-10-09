@@ -28,7 +28,7 @@ const AppDetails = () => {
         <div className="image ">
           <img
             className="w-52 h-52 md:w-96 md:h-[300px]"
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            src={image}
             alt={title}
           />
         </div>
