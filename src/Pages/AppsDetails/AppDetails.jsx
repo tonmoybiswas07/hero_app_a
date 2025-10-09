@@ -4,13 +4,17 @@ import dImg from "../../assets/icon-downloads.png";
 import rImg from "../../assets/icon-ratings.png";
 import reImg from "../../assets/icon-review.png";
 import { Bar, BarChart, XAxis, YAxis } from "recharts";
+import { addTOStoreDB, getStoredApp } from "../../Utility/storeDB";
+import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const AppDetails = () => {
   const { id } = useParams();
   const appId = parseInt(id);
   const loadAppDetails = useLoaderData();
+  const [isInstalled, setIsInstalled] = useState(false);
   const singleApp = loadAppDetails.find((app) => app.id === appId);
-  console.log(singleApp);
+
   const {
     image,
     title,
@@ -22,6 +26,21 @@ const AppDetails = () => {
     ratings,
     description,
   } = singleApp;
+
+  useEffect(() => {
+    const storedApps = getStoredApp();
+    const isAppInstalled = storedApps.includes(appId);
+    setIsInstalled(isAppInstalled);
+  }, [appId]);
+
+  const handleInstall = (id) => {
+    const success = addTOStoreDB(id);
+    if (success) {
+      toast.success("Apps Install Successfully");
+      setIsInstalled(true);
+    }
+  };
+
   return (
     <div className="max-w-6xl mx-auto">
       <div className="flex justify-start items-center flex-col md:flex-row mt-10 gap-10">
@@ -32,6 +51,7 @@ const AppDetails = () => {
             alt={title}
           />
         </div>
+        <ToastContainer />
         {/* contain */}
         <div className="contain">
           <h1 className="font-bold text-3xl">{title}</h1>
@@ -75,8 +95,16 @@ const AppDetails = () => {
             </div>
           </div>
           <div className="mt-10">
-            <button className="bg-[#00D390] text-white py-3 px-3 rounded-md border-2 font-semibold">
-              Install Now ({size} MB)
+            <button
+              onClick={() => handleInstall(appId)}
+              disabled={isInstalled}
+              className={`py-3 px-3 rounded-md border-2 font-semibold ${
+                isInstalled
+                  ? "bg-gray-400 cursor-not-allowed text-white"
+                  : "bg-[#00D390] text-white"
+              }`}
+            >
+              {isInstalled ? "Installed" : `Install Now (${size} MB)`}
             </button>
           </div>
         </div>
