@@ -4,7 +4,7 @@ import logoI from "../../assets/logo.png";
 const Footer = () => {
   return (
     <div>
-      <footer className="footer flex flex-col border-t-2 border-gray-400 mt-10 md:flex-row justify-center md:justify-around items-center pt-6  md:p-10">
+      <footer className="footer flex flex-col border-t-2 border-gray-400 mt-10 md:flex-row justify-center md:justify-around items-center pt-6  md:p-10 bg-black text-white">
         <nav>
           <h6 className="footer-title">Services</h6>
           <a className="link link-hover">Branding</a>
@@ -26,7 +26,7 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </footer>
-      <footer className="text-center border-base-300 border-t px-10">
+      <footer className="text-center border-base-300 border-t px-10 bg-black text-white pb-5">
         <div className="flex justify-center items-center gap-5 pt-2 flex-col">
           <div>
             <img className="h-20 w-20" src={logoI} alt="" />

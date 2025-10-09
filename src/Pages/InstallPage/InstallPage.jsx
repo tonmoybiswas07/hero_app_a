@@ -63,7 +63,7 @@ const InstallPage = () => {
       </div>
       {/* install card */}
       {sortItem.map((app) => (
-        <div className="flex justify-between items-center max-w-6xl mx-auto p-6 border-1 border-gray-200 rounded bg-gray-200 my-10">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto p-6 border-1 border-gray-200 rounded bg-gray-200 my-10">
           <div className="left flex justify-center items-center gap-5">
             <div className="image">
               <img className="h-20 w-20" src={app.image} alt="" />

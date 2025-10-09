@@ -68,7 +68,7 @@ const Header = () => {
           <div>
             <Link className="flex justify-center items-center gap-2" to="/">
               <img className="h-10 w-10" src={logoImg} alt="" />
-              <h3 className="font-bold text-[16px text-[#632EE3] ">HERO.IO</h3>
+              <h3 className="font-bold text-[18px] text-[#632EE3] ">Appify</h3>
             </Link>
           </div>
         </div>

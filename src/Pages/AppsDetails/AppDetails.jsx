@@ -3,7 +3,7 @@ import { useLoaderData, useParams } from "react-router";
 import dImg from "../../assets/icon-downloads.png";
 import rImg from "../../assets/icon-ratings.png";
 import reImg from "../../assets/icon-review.png";
-import { Bar, BarChart, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import { addTOStoreDB, getStoredApp } from "../../Utility/storeDB";
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -114,12 +114,14 @@ const AppDetails = () => {
         <div>
           <h2 className=" hidden md:flex text-2xl font-bold ml-5">Ratings</h2>
         </div>
-        <div className="hidden md:flex">
-          <BarChart width={1000} height={300} data={ratings} layout="vertical">
-            <XAxis type="count" dataKey="count"></XAxis>
-            <YAxis type="category" dataKey="name"></YAxis>
-            <Bar dataKey="count" fill="#FF8811"></Bar>
-          </BarChart>
+        <div className="flex w-full h-[300px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={ratings} layout="vertical">
+              <XAxis type="count" dataKey="count"></XAxis>
+              <YAxis type="category" dataKey="name"></YAxis>
+              <Bar dataKey="count" fill="#FF8811"></Bar>
+            </BarChart>
+          </ResponsiveContainer>
         </div>
         <div className="description">
           <h2 className="font-bold text-lg">Description</h2>
