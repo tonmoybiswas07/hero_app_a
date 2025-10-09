@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
           <div>
             <p>
-              ACME Industries Ltd.
+              APPIFY Industries Ltd.
               <br />
               Providing reliable tech since 1992
             </p>
