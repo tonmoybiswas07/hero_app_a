@@ -42,14 +42,15 @@ const AllApps = () => {
           </h2>
         </div>
         <div className="flex justify-center items-center relative">
-          <CiSearch className="absolute left-2" />
+          <CiSearch className="absolute left-2 top-3.5" />
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="border-1 rounded"
+            className="border-1 rounded pl-6 py-2"
             type="search"
             name=""
             id=""
+            placeholder="search Apps"
           />
         </div>
       </div>
